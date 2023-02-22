@@ -1,0 +1,26 @@
+[global]
+    monitor = 0
+    follow = keyboard
+    width = 370
+    height = 350
+    offset = 0x19
+    padding = 2
+    horizontal_padding = 2
+    transparency = 25
+    font = Roboto Regular 12
+    format = "<b>%s</b>\n%b"
+
+[urgency_low]
+    background = "#1d2021"
+    foreground = "#928374"
+    timeout = 3
+
+[urgency_normal]
+    background = "#1d2021"
+    foreground = "#928374"
+    timeout = 5
+
+[urgency_critical]
+    background = "#1d2021"
+    foreground = "#928374" 
+    timeout = 10
