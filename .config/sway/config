@@ -13,21 +13,21 @@ font pango:JetBrainsMono Nerd Font 12
 smart_gaps off
 gaps inner 10
 gaps outer 10
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
 # Colors
-set $bg #0c0c0c
-set $red #c50f1f
-set $green #13a10e
-set $yellow #c19c00
-set $blue #0037da
-set $purple #881798
-set $aqua #3a96dd
-set $gray #cccccc
-set $darkgray #767676
-set $white #f2f2f2
-set $lightgray #e5e5e5
+set $bg #2e3440
+set $red #bf616a
+set $green #a3be8c
+set $yellow #ebcb8b
+set $blue #81a1c1
+set $purple #b48ead
+set $aqua #88c0d0
+set $gray #434c5e
+set $darkgray #3b4252
+set $white #eceff4
+set $lightgray #d8dee9
 
 bar {
     position top

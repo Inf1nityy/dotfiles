@@ -7,6 +7,7 @@ config = {
 	enable_tab_bar = false,
 	window_close_confirmation = "NeverPrompt",
 	default_cursor_style = "BlinkingBar",
+    color_scheme = "Nord (base16)",
 	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" }),
 	font_size = 12,
 	window_padding = {
