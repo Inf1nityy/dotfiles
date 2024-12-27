@@ -5,19 +5,19 @@ general {
 
 order += "ipv6"
 order += "disk /"
-order += "wireless wlan0"
-order += "ethernet eth0"
+order += "wireless _first_"
+order += "ethernet _first_"
 order += "battery 0"
 order += "memory"
 order += "load"
 order += "time"
 
-wireless wlan0 {
+wireless _first_ {
     format_up = "W: (%quality at %essid, %bitrate) %ip"
     format_down = "W: down"
 }
 
-ethernet eth0 {
+ethernet _first_ {
     format_up = "E: %ip (%speed)"
     format_down = "E: down"
 }
