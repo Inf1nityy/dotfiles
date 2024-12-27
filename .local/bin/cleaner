@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# remove package cache
+sudo pacman -Scc
+
+# remove unused packages (orphans)
+sudo pacman -Rns $(pacman -Qtdq)
+
+# cleans the cache in your home directory
+rm -rf ~/.cache/*
+
+# empty the trash
+trash-empty
