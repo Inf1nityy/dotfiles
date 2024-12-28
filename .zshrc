@@ -1,5 +1,3 @@
-#!/bin/sh
-
 setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
 stty stop undef
@@ -80,3 +78,5 @@ bindkey '^R' history-incremental-search-backward
 
 # Starship
 eval "$(starship init zsh)"
+
+colorscript random

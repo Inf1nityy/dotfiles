@@ -74,3 +74,40 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(use-package page-break-lines
+  :ensure t
+  :config
+  (global-page-break-lines-mode))
+
+(require 'nerd-icons)
+
+(use-package all-the-icons
+  :if (display-graphic-p))
+
+(use-package dashboard
+  :ensure t
+  :init
+  (progn
+    (setq dashboard-items '((recents   . 5)
+                            (projects  . 5)
+                            (agenda    . 5)))
+    (setq dashboard-startupify-list '(dashboard-insert-banner
+                                      dashboard-insert-newline
+                                      dashboard-insert-banner-title
+                                      dashboard-insert-init-info
+                                      dashboard-insert-items
+                                      dashboard-insert-newline
+                                      dashboard-insert-footer))
+    (setq dashboard-show-shortcuts t)
+    (setq dashboard-center-content nil)
+    (setq dashboard-banner-logo-title "Mental gym")
+    (setq dashboard-set-file-icons t)
+    (setq dashboard-page-separator "\n\f\n")
+    (setq dashboard-set-heading-icons t)
+    (setq dashboard-startup-banner "~/.config/doom/logo.png")
+    )
+  :config
+  (dashboard-setup-startup-hook))
+
+(setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
