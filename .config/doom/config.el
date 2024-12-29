@@ -103,6 +103,8 @@
     (setq dashboard-center-content nil)
     (setq dashboard-banner-logo-title "Mental gym")
     (setq dashboard-set-file-icons t)
+    (setq dashboard-display-icons-p t)
+    (setq dashboard-icon-type 'nerd-icons)
     (setq dashboard-page-separator "\n\f\n")
     (setq dashboard-set-heading-icons t)
     (setq dashboard-startup-banner "~/.config/doom/logo.png")
