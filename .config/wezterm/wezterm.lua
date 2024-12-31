@@ -9,7 +9,7 @@ config = {
 	default_cursor_style = "BlinkingBar",
     color_scheme = "Nord (base16)",
 	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular" }),
-	font_size = 12,
+	font_size = 16,
 	window_padding = {
 		left = 3,
 		right = 3,
