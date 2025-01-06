@@ -9,7 +9,7 @@ export BROWSER="firefox"
 # clean up
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CACHE_HOME="$Home/.cache"
+export XDG_CACHE_HOME="$HOME/.cache"
 
 # add ~/.local/bin and ~/.config/emacs/bin to path
 if [ -d "$HOME/.local/bin" ] ; then
