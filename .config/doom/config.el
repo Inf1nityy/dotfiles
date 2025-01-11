@@ -75,17 +75,17 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(use-package page-break-lines
+(use-package! page-break-lines
   :ensure t
   :config
   (global-page-break-lines-mode))
 
 (require 'nerd-icons)
 
-(use-package all-the-icons
+(use-package! all-the-icons
   :if (display-graphic-p))
 
-(use-package dashboard
+(use-package! dashboard
   :ensure t
   :init
   (progn
