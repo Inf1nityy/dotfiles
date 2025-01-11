@@ -4,7 +4,7 @@
 export EDITOR="nvim"
 export TERMINAL="ghostty"
 export TERMINAL_PROG="ghostty"
-export BROWSER="firefox"
+export BROWSER="librewolf"
 
 # clean up
 export XDG_CONFIG_HOME="$HOME/.config"
