@@ -39,3 +39,6 @@ opacity = 1
 [window.padding]
 x = 16
 y = 16
+
+[env]
+TERM = "xterm-256color"
