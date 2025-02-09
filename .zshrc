@@ -78,3 +78,5 @@ bindkey '^R' history-incremental-search-backward
 
 # Starship
 eval "$(starship init zsh)"
+
+colorscript random
