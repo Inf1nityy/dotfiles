@@ -5,21 +5,52 @@ set $down j
 set $up k
 set $right l
 
-set $term wezterm
+set $term alacritty
 set $menu rofi -show drun
 
 ### Appearance
-font pango:JetBrainsMono Nerd Font 12
+font pango:Iosevka Nerd Font 12
 smart_gaps off
 gaps inner 10
 gaps outer 10
 default_border pixel 2
 default_floating_border pixel 2
 
+# Colors
+set $bg #2e3440
+set $red #bf616a
+set $green #a3be8c
+set $yellow #ebcb8b
+set $blue #81a1c1
+set $purple #b48ead
+set $aqua #88c0d0
+set $gray #434c5e
+set $darkgray #3b4252
+set $white #eceff4
+set $lightgray #d8dee9
+
 bar {
     position top
     status_command i3status
+    colors {
+        # bar background color
+        background $bg
+        # text color used for blocks that do not have a color specified.
+        statusline $lightgray
+        # workspaces section            
+        #                    border  backgr. text
+        focused_workspace    $aqua $aqua $bg
+        inactive_workspace   $bg $bg $lightgray
+        active_workspace     $bg $bg $lightgray
+        urgent_workspace     $red $red $bg
+    }
 }
+
+# class                 border|backgr|text|indicator|child_border
+client.focused          $lightgray $lightgray $bg $purple $darkgray
+client.focused_inactive $darkgray $darkgray $lightgray $purple $darkgray
+client.unfocused        $darkgray $darkgray $lightgray $purple $darkgray
+client.urgent           $red $red $white $red $red
 
 ### Idle configuration
 #
@@ -34,7 +65,9 @@ bar {
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-### Input configuration
+### Device configuration
+output HDMI-A-1 mode 2560x1440@143.998Hz
+
 input type:pointer {
     accel_profile "flat"
 }
