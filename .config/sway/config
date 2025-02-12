@@ -9,7 +9,7 @@ set $term alacritty
 set $menu rofi -show drun
 
 ### Appearance
-font pango:Iosevka Nerd Font 12
+font pango:Iosevka Nerd Font 16
 smart_gaps off
 gaps inner 10
 gaps outer 10
