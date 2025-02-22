@@ -43,7 +43,6 @@
 (setq org-directory "~/documents/org/")
 (setq org-roam-directory "~/documents/org")
 
-
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
@@ -117,6 +116,15 @@
 
 ;; make dashboard show up for emacsclient windows
 (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
+
+;; org roam setup
+(use-package! org-roam
+  :after org
+  :custom
+  (org-roam-directory (file-truename "~/documents/org"))
+  :config
+  (org-roam-db-autosync-mode))
+
 
 ;; make org roam not have a list of numbers at the start of a file name
 (setq org-roam-capture-templates
