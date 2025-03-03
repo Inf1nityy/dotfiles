@@ -48,3 +48,7 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 (package! org-roam)
+(package! nerd-icons)
+(package! dashboard)
+(package! page-break-lines)
+(package! all-the-icons)
