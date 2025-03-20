@@ -37,5 +37,5 @@ set render-loading-fg           "#434C5E"
 set recolor-lightcolor          "#2E3440"
 set recolor-darkcolor           "#ECEFF4"
 set recolor                     "true"
-set font                        "Iosevka Nerd Font 16"
+set font                        "JetBrains Mono 12"
 set guioptions                  none
