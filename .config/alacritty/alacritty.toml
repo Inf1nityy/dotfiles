@@ -1,32 +1,38 @@
 [colors.primary]
-background = "#2E3440"
-foreground = "#D8DEE9"
+background = '#181818'
+foreground = '#d8d8d8'
 
+[colors.cursor]
+text = '#181818'
+cursor = '#d8d8d8'
+
+# Normal colors
 [colors.normal]
-black = "#3B4252"
-red = "#BF616A"
-green = "#A3BE8C"
-yellow = "#EBCB8B"
-blue = "#81A1C1"
-magenta = "#B48EAD"
-cyan = "#88C0D0"
-white = "#E5E9F0"
+black   = '#181818'
+red     = '#ab4642'
+green   = '#a1b56c'
+yellow  = '#f7ca88'
+blue    = '#7cafc2'
+magenta = '#ba8baf'
+cyan    = '#86c1b9'
+white   = '#d8d8d8'
 
+# Bright colors
 [colors.bright]
-black = "#4C566A"
-red = "#BF616A"
-green = "#A3BE8C"
-yellow = "#EBCB8B"
-blue = "#81A1C1"
-magenta = "#B48EAD"
-cyan = "#8FBCBB"
-white = "#ECEFF4"
+black   = '#585858'
+red     = '#ab4642'
+green   = '#a1b56c'
+yellow  = '#f7ca88'
+blue    = '#7cafc2'
+magenta = '#ba8baf'
+cyan    = '#86c1b9'
+white   = '#f8f8f8'
 
 [font]
-size = 12
+size = 16
 
 [font.normal]
-family = "JetBrains Mono"
+family = "Iosevka Term"
 style = "Regular"
 
 [font.offset]
