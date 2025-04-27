@@ -20,10 +20,10 @@
 ;;
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
-;;
-(setq doom-font (font-spec :family "Iosevka Term" :size 16 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "Iosevka Term" :size 16))
-;;
+
+(setq doom-font (font-spec :name "Iosevka Term-16" :weight 'regular)
+      doom-variable-pitch-font (font-spec :name "Iosevka Term-16"))
+
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
@@ -37,11 +37,6 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
-
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/documents/org/")
-(setq org-roam-directory "~/documents/org")
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
@@ -116,6 +111,11 @@
 
 ;; make dashboard show up for emacsclient windows
 (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
+
+;; org mode setup
+(after! org
+  (setq org-directory "~/documents/org"
+        org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")))
 
 ;; org roam setup
 (use-package! org-roam

@@ -9,47 +9,36 @@ set $term alacritty
 set $menu rofi -show drun
 
 ### Appearance
-font pango:JetBrains Mono Nerd Font 16
+font pango:Iosevka Term 16
 smart_gaps off
 gaps inner 10
 gaps outer 10
 default_border pixel 2
-default_floating_border pixel 2
+default_floating_border pixel 0
 
 # Colors
-set $bg #2e3440
-set $red #bf616a
-set $green #a3be8c
-set $yellow #ebcb8b
-set $blue #81a1c1
-set $purple #b48ead
-set $aqua #88c0d0
-set $gray #434c5e
-set $darkgray #3b4252
-set $white #eceff4
-set $lightgray #d8dee9
+set $bg "#262626"
+set $magenta "#ff7eb6"
+set $green "#42be65"
+set $yellow "#ffe97b"
+set $blue "#33b1ff"
+set $red "#ee5396"
+set $cyan "#3ddbd9"
+set $white "#dde1e6"
+set $bg #181818
+set $gray #585858
+set $darkgray #181818
+set $lightgray #f8f8f8
 
 bar {
     position top
-    status_command i3status
-    colors {
-        # bar background color
-        background $bg
-        # text color used for blocks that do not have a color specified.
-        statusline $lightgray
-        # workspaces section            
-        #                    border  backgr. text
-        focused_workspace    $aqua $aqua $bg
-        inactive_workspace   $bg $bg $lightgray
-        active_workspace     $bg $bg $lightgray
-        urgent_workspace     $red $red $bg
-    }
+    swaybar_command waybar
 }
 
 # class                 border|backgr|text|indicator|child_border
-client.focused          $lightgray $lightgray $bg $purple $darkgray
-client.focused_inactive $darkgray $darkgray $lightgray $purple $darkgray
-client.unfocused        $darkgray $darkgray $lightgray $purple $darkgray
+client.focused          $green $lightgray $bg $blue $darkgray
+client.focused_inactive $green $darkgray $lightgray $blue $darkgray
+client.unfocused        $green $darkgray $lightgray $blue $darkgray
 client.urgent           $red $red $white $red $red
 
 ### Idle configuration
