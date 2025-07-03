@@ -56,6 +56,8 @@ client.urgent           $red $red $white $red $red
 
 ### Device configuration
 output HDMI-A-1 mode 2560x1440@143.998Hz
+output * allow_tearing yes
+output * max_render_time off
 
 input type:pointer {
     accel_profile "flat"

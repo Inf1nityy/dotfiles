@@ -1,36 +1,37 @@
-# github Alacritty Colors
+# Base16 Black Metal (Gorgoroth) - alacritty color config
+# metalelf0 (https://github.com/metalelf0)
+
+[colors]
+draw_bold_text_with_bright_colors = false
 
 # Default colors
 [colors.primary]
-background = '#0d1117'
-foreground = '#b3b1ad'
+background = '0x000000'
+foreground = '0xc1c1c1'
+
+# Colors the cursor will use if `custom_cursor_colors` is true
+[colors.cursor]
+text = '0x000000'
+cursor = '0xc1c1c1'
 
 # Normal colors
 [colors.normal]
-black   = '#484f58'
-red     = '#ff7b72'
-green   = '#3fb950'
-yellow  = '#d29922'
-blue    = '#58a6ff'
-magenta = '#bc8cff'
-cyan    = '#39c5cf'
-white   = '#b1bac4'
+black = '0x000000'
+red = '0x5f8787'
+green = '0x9b8d7f'
+yellow = '0x8c7f70'
+blue = '0x888888'
+magenta = '0x999999'
+cyan = '0xaaaaaa'
+white = '0xc1c1c1'
 
 # Bright colors
 [colors.bright]
-black   = '#6e7681'
-red     = '#ffa198'
-green   = '#56d364'
-yellow  = '#e3b341'
-blue    = '#79c0ff'
-magenta = '#d2a8ff'
-cyan    = '#56d4dd'
-white   = '#f0f6fc'
-
-[[colors.indexed_colors]]
-index = 16
-color = '#d18616'
-
-[[colors.indexed_colors]]
-index = 17
-color = '#ffa198'
+black = '0x333333'
+red = '0xaaaaaa'
+green = '0x121212'
+yellow = '0x222222'
+blue = '0x999999'
+magenta = '0x999999'
+cyan = '0x444444'
+white = '0xc1c1c1'

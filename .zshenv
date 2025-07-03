@@ -2,8 +2,8 @@
 
 # default programs
 export EDITOR="nvim"
-export TERMINAL="ghostty"
-export TERMINAL_PROG="ghostty"
+export TERMINAL="alacritty"
+export TERMINAL_PROG="alacritty"
 export BROWSER="librewolf"
 
 # clean up
@@ -22,4 +22,10 @@ fi
 
 if [ -d "$HOME/.config/emacs/bin" ] ; then
     PATH="$HOME/.config/emacs/bin:$PATH"
+fi
+
+export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_STYLE_OVERRIDE=qt6ct
+if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
+    exec sway
 fi

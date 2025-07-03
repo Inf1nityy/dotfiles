@@ -4,7 +4,7 @@ general.import = ["~/.config/alacritty/colors.toml"]
 size = 16
 
 [font.normal]
-family = "Iosevka Term"
+family = "Iosevka Nerd Font"
 style = "Regular"
 
 [font.offset]

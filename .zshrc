@@ -16,9 +16,10 @@ autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-# Colors
+# Prompt
 autoload -Uz colors && colors
-# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+setopt PROMPT_SUBST
+PROMPT='%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$ '
 
 HISTSIZE=10000
 SAVEHIST=10000
@@ -69,12 +70,9 @@ alias \
 export MANPAGER='nvim +Man!'
 
 # Plugins
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 bindkey -s '^F' "tmux-sessionizer\n"
 # Enable C-R searching (make sure this appears after bindkey -v)
 bindkey '^R' history-incremental-search-backward
-
-# Starship
-eval "$(starship init zsh)"
