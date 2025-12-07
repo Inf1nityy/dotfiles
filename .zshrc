@@ -19,7 +19,6 @@ zle -N down-line-or-beginning-search
 # Prompt
 autoload -Uz colors && colors
 setopt PROMPT_SUBST
-PROMPT='%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$ '
 
 HISTSIZE=10000
 SAVEHIST=10000
@@ -76,3 +75,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 bindkey -s '^F' "tmux-sessionizer\n"
 # Enable C-R searching (make sure this appears after bindkey -v)
 bindkey '^R' history-incremental-search-backward
+
+# starship prompt
+eval "$(starship init zsh)"

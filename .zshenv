@@ -2,9 +2,9 @@
 
 # default programs
 export EDITOR="nvim"
-export TERMINAL="alacritty"
-export TERMINAL_PROG="alacritty"
-export BROWSER="librewolf"
+export TERMINAL="kitty"
+export TERMINAL_PROG="kitty"
+export BROWSER="zen"
 
 # clean up
 export XDG_CONFIG_HOME="$HOME/.config"

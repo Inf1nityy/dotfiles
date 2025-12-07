@@ -5,41 +5,31 @@ set $down j
 set $up k
 set $right l
 
-set $term alacritty
+set $term kitty
 set $menu rofi -show drun
 
 ### Appearance
-font pango:Iosevka Term 16
+font pango:Iosevka Nerd Font 16
 smart_gaps off
-gaps inner 10
-gaps outer 10
-default_border pixel 2
-default_floating_border pixel 0
+gaps inner 15
+gaps outer 15
+default_border pixel 1
+default_floating_border pixel 1
 
 # Colors
-set $bg "#262626"
-set $magenta "#ff7eb6"
-set $green "#42be65"
-set $yellow "#ffe97b"
-set $blue "#33b1ff"
-set $red "#ee5396"
-set $cyan "#3ddbd9"
-set $white "#dde1e6"
-set $bg #181818
-set $gray #585858
-set $darkgray #181818
-set $lightgray #f8f8f8
-
 bar {
     position top
     swaybar_command waybar
 }
 
-# class                 border|backgr|text|indicator|child_border
-client.focused          $green $lightgray $bg $blue $darkgray
-client.focused_inactive $green $darkgray $lightgray $blue $darkgray
-client.unfocused        $green $darkgray $lightgray $blue $darkgray
-client.urgent           $red $red $white $red $red
+# Colors
+client.focused          #58a6ff #0d1117 #c9d1d9 #58a6ff #58a6ff
+client.focused_inactive #21262d #0d1117 #c9d1d9 #21262d #21262d
+client.unfocused        #161b22 #0d1117 #8b949e #161b22 #161b22
+client.urgent           #ff7b72 #0d1117 #ffffff #ff7b72 #ff7b72
+client.placeholder      #0d1117 #0d1117 #c9d1d9 #0d1117 #0d1117
+
+client.background       #0d1117
 
 ### Idle configuration
 #
@@ -71,6 +61,7 @@ input * xkb_options grp:alt_shift_toggle
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
+bindsym $mod+t exec rofi -show emoji
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec ~/.local/bin/powermenu
