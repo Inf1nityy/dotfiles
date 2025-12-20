@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+dir="$HOME/images/wallpapers"
+
+wallpaper=$(
+    for img in "$dir"/*; do
+        name=$(basename "$img")
+        printf "%s\0icon\x1f%s\n" "$name" "$img"
+    done | rofi -dmenu -show-icons
+)
+
+awww img "$dir/$wallpaper" --transition-type center
