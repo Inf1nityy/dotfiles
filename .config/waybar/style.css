@@ -1,159 +1,175 @@
-@define-color background #0d1117;
-@define-color foreground #c9d1d9;
-@define-color color0     #484f58;
-@define-color color1     #ff7b72;
-@define-color color2     #3fb950;
-@define-color color3     #d29922;
-@define-color color4     #58a6ff;
-@define-color color5     #bc8cff;
-@define-color color6     #39c5cf;
-@define-color color7     #b1bac4;
-@define-color color8     #6e7681;
-@define-color color9     #ffa198;
-@define-color color10    #56d364;
-@define-color color11    #e3b341;
-@define-color color12    #79c0ff;
-@define-color color13    #d2a8ff;
-@define-color color14    #56d4dd;
-@define-color color15    #f0f6fc;
+@define-color bg-main        rgba(13, 17, 23, 0.75);
+@define-color bg-module      rgba(22, 27, 34, 0.75);
+
+@define-color bg-main-solid   @bg-main;
+@define-color bg-module-solid @bg-module;
+
+@define-color accent          #58A6FF;
+@define-color accent-soft     #1F6FEB;
+
+@define-color text-main       #C9D1D9;
+@define-color text-dark       @bg-main;
+
+@define-color warning         #D29922;
+@define-color critical        #F85149;
+
+@define-color border-subtle   rgba(255, 255, 255, 0.04);
 
 * {
+    font-family: Iosevka NF;
     font-size: 16px;
-    font-family: "Iosevka Nerd Font Propo";
+    padding: 0;
+    background: transparent;
+    border-radius: 8px;
 }
 
 window#waybar {
-    all: unset;
-    background: alpha(@background, 1);
+    background: linear-gradient(
+        to bottom,
+        @bg-main 85%,
+        @bg-main 65%
+    );
+
+    border-radius: 14px;
+    padding: 6px;
+    border: 1px solid @border-subtle;
+}
+
+#battery,
+#network,
+#clock,
+#custom-applauncher,
+#tray,
+#workspaces,
+#cpu,
+#memory,
+#language,
+#pulseaudio {
+    background: linear-gradient(
+        to bottom,
+        @bg-module 85%,
+        @bg-module 75%
+    );
+
+    margin: 6px;
     padding: 5px 10px;
-    margin: 8px;
-    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.6);
-    color: @foreground;
-}
+    border-radius: 10px;
+    color: @text-main;
 
-/* Single unified bar */
-.modules-left,
-.modules-center,
-.modules-right {
-    background: transparent;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-}
+    border: 1px solid @border-subtle;
 
-/* Tooltips */
-tooltip {
-    background: @background;
-    color: @color7;
-}
-
-/* Hoverable modules */
-#clock, #custom-pacman, #custom-notification, #bluetooth, #pulseaudio, #network, #battery, #cpu, #memory, #temperature {
-    padding: 0px 6px;
-    color: @color7;
-    transition: all 0.3s ease;
+    transition:
+        background 140ms ease,
+        color 140ms ease,
+        box-shadow 140ms ease;
 }
 
 #clock:hover,
-#custom-pacman:hover,
-#custom-notification:hover,
-#bluetooth:hover,
 #pulseaudio:hover,
+#tray:hover,
 #network:hover,
-#battery:hover,
 #cpu:hover,
 #memory:hover,
-#temperature:hover {
-    color: @color9;
-}
+#language:hover,
+#battery:hover {
+    background: linear-gradient(
+        to bottom,
+        @accent,
+        @accent-soft
+    );
 
-/* Workspaces */
-#workspaces {
-    padding: 0px 5px;
+    color: @text-dark;
+    font-weight: bolder;
+
+    box-shadow:
+        0 0 6px rgba(88, 166, 255, 0.35),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 #workspaces button {
-    all: unset;
-    padding: 0px 5px;
-    color: alpha(@color9, 0.4);
-    transition: all 0.2s ease;
+    all: initial;
+    min-width: 0;
+    margin: 0 0.2cm;
+    font-weight: bold;
+    color: @text-main;
+    transition: color 120ms ease;
 }
 
 #workspaces button:hover {
-    color: rgba(0, 0, 0, 0);
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
-    transition: all 1s ease;
+    color: @accent-soft;
 }
 
-#workspaces button.focused {
-    color: @color9;
-    text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+#workspaces button.focused,
+#workspaces button.active {
+    color: @accent;
 }
 
-#workspaces button.empty {
-    color: rgba(0, 0, 0, 0);
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.2);
-    transition: none;
+#workspaces button.urgent {
+    color: @critical;
 }
 
-#workspaces button.empty:hover {
-    color: rgba(0, 0, 0, 0);
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 0.5);
-    transition: all 1s ease;
+#tray button {
+    all: initial;
+    min-width: 0;
+    margin: 0 0.2cm;
+    transition: background 120ms ease;
 }
 
-/* Individual modules */
-#custom-notification,
-#custom-pacman,
-#custom-expand,
-#custom-colorpicker,
-#cpu,
-#memory,
-#temperature,
-#group-expand,
-#tray,
-#battery,
-#bluetooth,
-#pulseaudio,
-#network,
-#custom-endpoint {
-    padding: 0px 6px;
-    transition: all 0.3s ease;
-    color: @color7;
+tooltip {
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
-/* Charging status */
-#battery.charging {
-    color: #26A65B;
+tooltip label {
+    background-color: @bg-module;
+    color: @text-main;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid @border-subtle;
 }
 
-#battery.warning:not(.charging) {
-    color: #ffbe61;
+tooltip * {
+    color: @text-main;
 }
 
-#battery.critical:not(.charging) {
-    color: #f53c3c;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#tray menu {
+    background: linear-gradient(
+        to bottom,
+        @bg-main 95%,
+        @bg-main 85%
+    );
+
+    color: @text-main;
+    padding: 6px;
+    border-radius: 10px;
+    border: 1px solid @border-subtle;
 }
 
-/* Custom endpoint (invisible but glowy) */
-#custom-endpoint {
-    color: transparent;
-    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+#tray menu menuitem {
+    background: linear-gradient(
+        to bottom,
+        @bg-module 85%,
+        @bg-module 80%
+    );
+
+    margin: 4px;
+    padding: 6px;
+    border-radius: 6px;
+    color: @text-main;
 }
 
-/* Tray dropdowns */
-#tray menu * {
-    padding: 0px 5px;
-    transition: all 0.3s ease;
+#tray menu menuitem:hover {
+    color: @accent;
+    font-weight: bold;
 }
 
-#tray menu separator {
-    padding: 0px 5px;
-    transition: all 0.3s ease;
+#battery {
+    margin-right: 0.2cm;
 }
 
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+    color: @critical;
+}
