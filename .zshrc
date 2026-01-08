@@ -64,7 +64,17 @@ alias \
     ls="ls -hN --color=auto --group-directories-first" \
     grep="grep --color=auto" \
     diff="diff --color=auto" \
-    ip="ip --color=auto"
+    ip="ip --color=auto" \
+    vim="nvim" \
+
+paruf() {
+  paru -Slq $(pacman-conf --repo-list) \
+  | sort -u \
+  | fzf --multi \
+        --preview 'paru -Si {} 2>/dev/null | sed -n "1,200p"' \
+        --preview-window=down:75% \
+  | xargs -ro paru -S
+}
 
 export MANPAGER='nvim +Man!'
 
