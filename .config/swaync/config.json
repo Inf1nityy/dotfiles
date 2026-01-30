@@ -1,0 +1,67 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-margin-top": 10,
+  "control-center-margin-bottom": 10,
+  "control-center-margin-right": 10,
+  "control-center-margin-left": 10,
+
+  "notification-window-width": 420,
+  "notification-window-height": 110,
+  "notification-margin-top": 60,
+  "notification-margin-right": 10,
+
+  "timeout": 6,
+  "timeout-low": 4,
+  "timeout-critical": 0,
+
+  "fit-to-screen": true,
+  "hide-on-clear": true,
+  "hide-on-action": true,
+
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+
+  "widgets": [
+    "title",
+    "notifications",
+    "mpris",
+    "volume",
+    "backlight",
+    "buttons"
+  ],
+
+  "widget-config": {
+    "title": {
+      "text": "Notifications"
+    },
+
+    "mpris": {
+      "image-size": 72,
+      "blur": false
+    },
+
+    "volume": {
+      "label": "Volume",
+      "show-per-app": false
+    },
+
+    "backlight": {
+      "label": "Brightness"
+    },
+
+    "buttons": {
+      "actions": [
+        {
+          "label": "Clear",
+          "command": "swaync-client -C"
+        },
+        {
+          "label": "DND",
+          "command": "swaync-client -d"
+        }
+      ]
+    }
+  }
+}

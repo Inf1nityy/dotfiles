@@ -1,0 +1,111 @@
+@define-color bg-main        rgba(13, 17, 23, 0.75);
+@define-color bg-module      rgba(22, 27, 34, 0.75);
+
+@define-color accent         #58A6FF;
+@define-color accent-soft    #1F6FEB;
+
+@define-color text-main      #C9D1D9;
+@define-color text-dark      rgba(13, 17, 23, 1);
+
+@define-color warning        #D29922;
+@define-color critical       #F85149;
+
+@define-color border-subtle  rgba(255, 255, 255, 0.04);
+
+* {
+    font-family: Iosevka NF;
+    font-size: 15px;
+    background: transparent;
+}
+
+.notification {
+    background: linear-gradient(
+        to bottom,
+        @bg-module 85%,
+        @bg-module 75%
+    );
+
+    margin: 6px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid @border-subtle;
+    color: @text-main;
+}
+
+.notification.critical {
+    border: 1px solid @critical;
+    color: @critical;
+}
+
+.control-center {
+    background: linear-gradient(
+        to bottom,
+        @bg-main 90%,
+        @bg-main 80%
+    );
+
+    border-radius: 14px;
+    border: 1px solid @border-subtle;
+    padding: 10px;
+}
+
+.control-center .title {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 6px 10px;
+    margin-bottom: 6px;
+}
+
+.widget {
+    background: linear-gradient(
+        to bottom,
+        @bg-module 85%,
+        @bg-module 75%
+    );
+
+    margin: 6px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid @border-subtle;
+}
+
+.widget:hover,
+.notification:hover {
+    background: linear-gradient(
+        to bottom,
+        @accent,
+        @accent-soft
+    );
+
+    color: @text-dark;
+    font-weight: bold;
+
+    box-shadow:
+        0 0 6px rgba(88, 166, 255, 0.35),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+button {
+    background: linear-gradient(
+        to bottom,
+        @bg-module 85%,
+        @bg-module 75%
+    );
+
+    border-radius: 8px;
+    padding: 6px 10px;
+    margin: 4px;
+    border: 1px solid @border-subtle;
+    color: @text-main;
+}
+
+button:hover {
+    background: linear-gradient(
+        to bottom,
+        @accent,
+        @accent-soft
+    );
+
+    color: @text-dark;
+    font-weight: bold;
+}

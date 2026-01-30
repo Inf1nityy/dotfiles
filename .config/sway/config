@@ -88,7 +88,8 @@ input * xkb_options grp:alt_shift_toggle
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec $menu
-bindsym $mod+t exec rofi -show emoji
+bindsym $mod+t exec swaync-client -t
+bindsym $mod+Shift+t exec rofi -show emoji
 floating_modifier $mod normal
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec ~/.local/bin/powermenu

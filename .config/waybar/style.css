@@ -20,7 +20,6 @@
     font-size: 16px;
     padding: 0;
     background: transparent;
-    border-radius: 8px;
 }
 
 window#waybar {
@@ -29,10 +28,6 @@ window#waybar {
         @bg-main 85%,
         @bg-main 65%
     );
-
-    border-radius: 14px;
-    padding: 6px;
-    border: 1px solid @border-subtle;
 }
 
 #battery,

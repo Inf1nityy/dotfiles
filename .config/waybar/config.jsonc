@@ -1,12 +1,6 @@
 {
-    "layer": "top",
-    "spacing": 0,
-    "height": 0,
-    "margin-bottom": 0,
-    "margin-top": 10,
+    "height": 50,
     "position": "top",
-    "margin-right": 500,
-    "margin-left": 500,
     "modules-left": [
         "sway/workspaces"
     ],
