@@ -28,6 +28,6 @@ initial_window_height 30
 
 
 # BEGIN_KITTY_THEME
-# GitHub Dark Dimmed
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME

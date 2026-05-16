@@ -2,7 +2,7 @@
     "height": 50,
     "position": "top",
     "modules-left": [
-        "sway/workspaces"
+        "hyprland/workspaces"
     ],
     "modules-center": [
         "clock"
@@ -12,12 +12,12 @@
         "network",
         "pulseaudio",
         "battery",
-        "sway/language",
+        "hyprland/language",
         "cpu",
         "memory"
     ],
 
-    "sway/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": false,
         "tooltip": false
@@ -71,7 +71,7 @@
         },
         "interval": 10
     },
-    "sway/language": {
+    "hyprland/language": {
         "format": "{}",
         "on-click": "swaymsg input type:keyboard xkb_switch_layout next",
     },

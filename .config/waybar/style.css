@@ -1,19 +1,19 @@
-@define-color bg-main        rgba(13, 17, 23, 0.75);
-@define-color bg-module      rgba(22, 27, 34, 0.75);
+@define-color bg-main        #161b22;  /* GitHub base background */
+@define-color bg-module      #21262d;  /* GitHub secondary surface */
 
 @define-color bg-main-solid   @bg-main;
 @define-color bg-module-solid @bg-module;
 
-@define-color accent          #58A6FF;
-@define-color accent-soft     #1F6FEB;
+@define-color accent          #58a6ff;
+@define-color accent-soft     #1f6feb;
 
-@define-color text-main       #C9D1D9;
-@define-color text-dark       @bg-main;
+@define-color text-main       #c9d1d9;
+@define-color text-dark       #0d1117;
 
-@define-color warning         #D29922;
-@define-color critical        #F85149;
+@define-color warning         #d29922;
+@define-color critical        #f85149;
 
-@define-color border-subtle   rgba(255, 255, 255, 0.04);
+@define-color border-subtle   #30363d; /* GitHub border color */
 
 * {
     font-family: Iosevka NF;
@@ -28,6 +28,8 @@ window#waybar {
         @bg-main 85%,
         @bg-main 65%
     );
+
+    padding: 6px;
 }
 
 #battery,
@@ -40,23 +42,13 @@ window#waybar {
 #memory,
 #language,
 #pulseaudio {
-    background: linear-gradient(
-        to bottom,
-        @bg-module 85%,
-        @bg-module 75%
-    );
-
+    background: @bg-module;
     margin: 6px;
     padding: 5px 10px;
     border-radius: 10px;
     color: @text-main;
 
     border: 1px solid @border-subtle;
-
-    transition:
-        background 140ms ease,
-        color 140ms ease,
-        box-shadow 140ms ease;
 }
 
 #clock:hover,
@@ -67,18 +59,8 @@ window#waybar {
 #memory:hover,
 #language:hover,
 #battery:hover {
-    background: linear-gradient(
-        to bottom,
-        @accent,
-        @accent-soft
-    );
-
-    color: @text-dark;
-    font-weight: bolder;
-
-    box-shadow:
-        0 0 6px rgba(88, 166, 255, 0.35),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    background: #21262d;
+    color: @accent;
 }
 
 #workspaces button {

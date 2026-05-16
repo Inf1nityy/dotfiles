@@ -88,3 +88,6 @@ bindkey '^R' history-incremental-search-backward
 
 # starship prompt
 eval "$(starship init zsh)"
+
+# zoxide
+eval "$(zoxide init zsh)"
