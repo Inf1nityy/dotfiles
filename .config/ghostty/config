@@ -1,0 +1,21 @@
+# Font Configuration
+font-family = "Iosevka NF"
+font-size = 16.0
+
+# Window Styling & Padding
+window-padding-x = 0
+window-padding-y = 0
+
+# Fix window decorations on X11
+window-decoration = server
+
+# Cursor Configuration
+cursor-style = "block"
+cursor-style-blink = true
+
+# Window Dimensions on Startup (columns x rows)
+window-width = 110
+window-height = 30
+
+theme = "GitHub Dark Dimmed"
+background-opacity = 0.9

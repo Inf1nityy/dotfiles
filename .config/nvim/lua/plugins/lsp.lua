@@ -74,6 +74,9 @@ return {
                         cmd = { "clangd" },
                         filetypes = { "c", "cpp", "objc", "objcpp" },
                         root_dir = require('lspconfig').util.root_pattern("compile_commands.json", ".git"),
+                        on_attach = function ()
+                            vim.keymap.set("n", "<leader>th", "<cmd>ClangdSwitchSourceHeader<CR>", { desc = "Switch between Source/Header" })
+                        end
                     }
                 end,
             }

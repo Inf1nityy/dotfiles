@@ -1,3 +1,40 @@
 set selection-clipboard clipboard
 set font                        "Iosevka NF 16"
 set guioptions                  none
+
+set adjust-open "best-fit"
+set pages-per-row 1
+
+set scroll-page-aware "true"
+set smooth-scroll "true"
+set scroll-step 50
+
+set default-bg                  "#22272e"
+set default-fg                  "#adbac7"
+
+set statusbar-bg                "#1c2128"
+set statusbar-fg                "#adbac7"
+
+set inputbar-bg                 "#2d333b"
+set inputbar-fg                 "#adbac7"
+
+set completion-bg               "#22272e"
+set completion-fg               "#adbac7"
+set completion-highlight-bg     "#2d333b"
+set completion-highlight-fg     "#539bf5"
+
+set notification-bg             "#22272e"
+set notification-fg             "#adbac7"
+set notification-error-bg       "#e5534b"
+set notification-error-fg       "#cdd9e5"
+set notification-warning-bg     "#c69026"
+set notification-warning-fg     "#cdd9e5"
+
+set highlight-color             "#ae7c14" # Muted gold / yellow
+set highlight-active-color      "#2b6cb0" # Dimmed blue active search
+
+set recolor                     "true"
+set recolor-lightcolor          "#22272e" # Inverts white pages to main bg
+set recolor-darkcolor           "#adbac7" # Inverts black text to main fg
+
+set recolor-keephue             "true"

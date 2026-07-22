@@ -1,31 +1,40 @@
 #!/usr/bin/env sh
-# Take a screenshot on wayland with swaymsg, jq, grim, slurp, and swappy
+# Take a screenshot on wayland with hyprctl, jq, grim, slurp, and wl-copy
 #
 # Make sure the script is executable (chmod +x ./screenshot.sh)
 #
-# If you don't use sway, replace `swaymsg` with whatever your window manager
-# gives you to query window information.
+# Example Hyprland configuration (~/.config/hypr/hyprland.conf)
 #
-# Example sway configuration
-#
-# bindsym Print             exec ~/.local/bin/screenshot.sh region
-# bindsym Shift+Print       exec ~/.local/bin/screenshot.sh window
-# bindsym Ctrl+Print        exec ~/.local/bin/screenshot.sh all
-
+# bind = , Print, exec, ~/.local/bin/screenshot.sh region
+# bind = SHIFT, Print, exec, ~/.local/bin/screenshot.sh window
+# bind = CTRL, Print, exec, ~/.local/bin/screenshot.sh all
 
 # region|window|all
 mode="$1"
+
+# Ensure the directory exists so grim doesn't fail
+mkdir -p "$HOME/images/screenshots"
 file="$HOME/images/screenshots/$(date +%Y-%m-%d_%I-%M-%S.png)"
 
 case $mode in
     "region")
-        grim -g "$(slurp)" $file
+        # Select a custom region with slurp
+        geometry=$(slurp)
+        [ -z "$geometry" ] && exit 1 # Exit if user cancels (escapes) slurp
+        grim -g "$geometry" "$file"
         ;;
     "window")
-        grim -g "$(swaymsg -t get_tree | jq -j '.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"')" $file
+        # Query Hyprland for the active window's position and size
+        geometry=$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')
+        if [ "$geometry" = "0,0 0x0" ] || [ -z "$geometry" ]; then
+            echo >&2 "No active window found or desktop is focused."
+            exit 1
+        fi
+        grim -g "$geometry" "$file"
         ;;
     "all")
-        grim $file
+        # Capture all visible outputs
+        grim "$file"
         ;;
     *)
         echo >&2 "unsupported command \"$mode\""
@@ -34,4 +43,5 @@ case $mode in
         exit 1
 esac
 
-wl-copy < $file
+# Copy the file to the clipboard
+wl-copy < "$file"
