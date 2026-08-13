@@ -1,5 +1,0 @@
-require("modules.devices")
-require("modules.appearance")
-require("modules.windowrules")
-require("modules.keybinds")
-require("modules.autostart")

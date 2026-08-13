@@ -20,4 +20,6 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+export QT_QPA_PLATFORMTHEME=qt6ct
+export WLR_NO_HARDWARE_CURSORS=1
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/fzf.conf"

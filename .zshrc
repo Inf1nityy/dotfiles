@@ -88,6 +88,7 @@ bindkey '^R' history-incremental-search-backward
 
 # starship prompt
 eval "$(starship init zsh)"
+# PROMPT='%F{green}%n@%m%f:%F{blue}%~%f$ '
 
 # zoxide
 eval "$(zoxide init zsh)"
